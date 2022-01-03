@@ -1,4 +1,11 @@
-
+.main {
+  margin:auto;
+  width:50%;
+ 
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
 .App {
   text-align: center;
   display: grid;
@@ -6,21 +13,38 @@
   align-items: center;
   justify-content: center;
   padding: 75px;
-  background-color: #4b4b4b;
+  background-color: #fff;
   width: 50%;
   margin:auto;
-  border: #b44886 solid 3px;
+  border: #fff solid 3px;
 }
 
 .App > div{
   background-color: #61dafb;
   border-radius: 5px;
-  border: #747474 5px solid;
+  /* border: #747474 5px solid; */
+  box-shadow: 5px 10px #747474;
+  
   margin: 10px;
   padding:60px;
   font-size: 30px;
 }
-
+.css-input {
+  padding: 5px;
+  font-size: 16px;
+  font-family:'fantasy';
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.css-input:focus {
+  outline:none;
+}
 
 /* .App-header {
   background-color: #282c34;

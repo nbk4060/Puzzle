@@ -4,6 +4,7 @@ function Subdiv(props) {
 
     const {row} = props;
     const [ditem,setDitem] = useState(row);
+  
     const content = [];
     const dragItem = useRef();
     const dragOverItem = useRef();
@@ -14,12 +15,12 @@ function Subdiv(props) {
 
     const dragStart = (e, position) => {
         dragItem.current = position;
-        console.log(e.target.innerHTML);
+      //   console.log(e.target.innerHTML);
     }
 
     const dragEnter = (e,position) => {
         dragOverItem.current = position;
-        console.log(e.target.innerHTML);
+      //   console.log(e.target.innerHTML);
     }
     
      const drop = (e) => {
@@ -32,13 +33,19 @@ function Subdiv(props) {
         setDitem(copydiv);
      }
     
-   //   const comparsion = (row.length == ditem.length && row.every(function(element,index){
-   //       return element === ditem[index];
-   //   }))
-   //    console.log(comparsion);
-     console.log(ditem);
-    console.log('new');
-   // console.log(row);
+     
+    
+     const comparsion = (a,b) => {
+      //   console.log(a);
+      //   console.log(b);
+         a.length === b.length && a.every((v,i)=> v===b[i]);
+     }
+   //   console.log('---');
+   //    console.log(row);
+   //    console.log(ditem);
+   //   console.log(comparsion(a,b));
+   // console.log(ditem);
+ 
   return (<>
     {/* <h1>hhh</h1> */}
     
@@ -52,10 +59,6 @@ function Subdiv(props) {
             >{data}</div>
         // console.log(data+1)
      )}
-   {/* {row.map((index,data) =>
-        <div key={index+1}>{data+1}</div>
-        // console.log(data+1)
-     )} */}
   </>);
 }
 
