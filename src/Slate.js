@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Subdiv from './Subdiv';
 function Slate(props) {
 
@@ -12,8 +12,27 @@ function Slate(props) {
           
           
             const newarray = [];
-
-
+        function create () {
+              for(let i=1;i<=result;i++)
+            {
+                // console.log(i);
+                 newarray.push(i);
+                
+            //    content.push(<div key={i}>{i}</div>) ;
+           
+            }
+            // console.log(newarray);
+            setArrayvalue(newarray);
+            shuffle(arrayvalue);
+            return content;
+        }
+        
+           useEffect(()=>{
+              create();
+              // console.log('---useEffect---');
+              // console.log(st1);
+              // console.log('---end---');
+           },[st1]);
 
             function shuffle(array) {
               // setArrayvalue(newarray);
@@ -41,7 +60,7 @@ function Slate(props) {
   return (
   <>
       <Subdiv row={shuffle1}/>
-        {(()=>{
+        {/* {(()=>{
            
             // const style = {
             //     width: width,
@@ -61,14 +80,14 @@ function Slate(props) {
             // console.log(newarray);
              
             return content;
-        })()}
+        })()} */}
         {/* <Subdiv row={newarray}/> */}
 
         {/* {shuffle1.map((index,shu)=>
             <div key={index}>{shu} </div>
         )} */}
-      <button onClick={()=>setArrayvalue(newarray)}>Create</button> 
-      <button onClick={()=>shuffle(arrayvalue)}>Shuffle Puzzle</button>     
+      {/* <button onClick={()=>setArrayvalue(newarray)}>Create</button> 
+      <button onClick={()=>shuffle(arrayvalue)}>Shuffle Puzzle</button>      */}
   </>
   );
 }
