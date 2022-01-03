@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Slate from './Slate';
-import { canSwap, shuffle, swap, isSolved } from "./reuseable"
+
 
 function Panel(props) {
     const {sno} = props;
@@ -16,29 +16,10 @@ function Panel(props) {
       };
 
        
-      const shuffleTiles = () => {
-        const shuffledTiles = shuffle(slates)
-        setSlates(shuffledTiles);
-      }
+   
     
-//       const swapTiles = (tileIndex) => {
-//         if (canSwap(tileIndex, slates.indexOf(slates.length - 1))) {
-//           const swappedTiles = swap(slates, tileIndex, slates.indexOf(slates.length - 1))
-//           setSlates(swappedTiles)
-//         }
-//       }
-      
-//   const handleTileClick = (index) => {
-//     swapTiles(index)
-//   }
-      const handleShuffleClick = () => {
-        shuffleTiles()
-      }
-    
-      const handleStartClick = () => {
-        shuffleTiles()
-        setIsStarted(true)
-      }   
+
+        
 
   return (
   <div className="App" style={style}>
