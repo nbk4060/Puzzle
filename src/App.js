@@ -6,23 +6,28 @@ function App() {
   
    const [count, setCount] = useState(0);
 
-   const handleOnChange = () => {
-       alert(count);
-   }
+    const handlecount = (e) => {
+            setCount(e.target.value)
+    }
+  //  const handleOnChange = (e) => {
+  //   e.preventDefault();
+  
+  //  }
 
   return (
     <div className="main">
       <h1>React Puzzle</h1>
-      <form onSubmit={handleOnChange}>
+      <form >
       <label>Enter Number for Grid Puzzle:
         <input
           type="number"
           name="count[]" 
           value={count}
-          onChange={(e) => setCount(e.target.value)}
+          onChange={handlecount}
         />
       </label>
-    
+      {/* <input type="submit" value="Submit"/> */}
+      
     </form>
      <Panel sno = {count}/>
     </div>

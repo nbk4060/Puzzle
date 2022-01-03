@@ -11,8 +11,7 @@ function Panel(props) {
     const gwidth = Math.round(50/mul);
     const gheight = Math.round(50/mul);
     const style = {
-        width: 500,
-        height: 500,
+       gridTemplateColumns:`repeat(${sno},auto)`
         
       };
 
@@ -42,7 +41,7 @@ function Panel(props) {
       }   
 
   return (
-  <div className="App">
+  <div className="App" style={style}>
            {/* {sno} */}
            {/* {slates.map((slate,index)=>(
                <Slate 
