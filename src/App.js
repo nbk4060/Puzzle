@@ -2,33 +2,31 @@ import React,{useState} from 'react'
 import './App.css';
 import Panel from './Panel';
 
+
+
 function App() {
   
-   const [count, setCount] = useState(0);
+   const [count, setCount] = useState(null);
 
     const handlecount = (e) => {
+      // console.log(e.target.value);
             setCount(e.target.value)
     }
-  //  const handleOnChange = (e) => {
-  //   e.preventDefault();
-  
-  //  }
+
 
   return (
     <div className="main">
-      <h1>React Puzzle</h1>
-      <form >
-      <label>Enter Number for Grid Puzzle:
-        <input
+      <h1 style={{fontSize:'30px',fontFamily:'fantasy'}}>React Puzzle</h1>
+     
+    <label style={{fontSize:'18px',fontFamily:'fantasy'}}>Enter Number for Grid Puzzle:
+        
+       
+    <input
           type="number"
-          name="count[]" 
-          value={count}
+          name="count" 
           onChange={handlecount}
-        />
-      </label>
-      {/* <input type="submit" value="Submit"/> */}
-      
-    </form>
+          className='css-input'
+        /> </label>
      <Panel sno = {count}/>
     </div>
   );
