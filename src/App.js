@@ -27,7 +27,7 @@ function App() {
           onChange={handlecount}
           className='css-input'
         /> </label>
-     <Panel sno = {count}/>
+     <Panel sno={count}/>
     </div>
   );
 }
