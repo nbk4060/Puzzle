@@ -2,16 +2,25 @@ import React,{useState,useEffect,useRef} from 'react'
 
 function Subdiv(props) {
 
-    const {row} = props;
+    const {row,org} = props;
     const [ditem,setDitem] = useState(row);
-  
+    const [orgStore,setOrgStore] = useState([]);
     const content = [];
     const dragItem = useRef();
     const dragOverItem = useRef();
    
     useEffect(()=>{
        setDitem(row);
+       orginalArray();
     },[row])
+     
+    const orginalArray = () =>{
+       for(let i=1;i<=org;i++)
+       {
+          content.push(i);
+       }
+       setOrgStore(content);
+    }
 
     const dragStart = (e, position) => {
         dragItem.current = position;
@@ -35,17 +44,30 @@ function Subdiv(props) {
     
      
     
-     const comparsion = (a,b) => {
+     const comparsion = (arr1,arr2) => {
       //   console.log(a);
       //   console.log(b);
-         a.length === b.length && a.every((v,i)=> v===b[i]);
+         // a.length === b.length && a.every((v,i)=> console.log(v===b[i]) );
+          // compare arrays
+          
+          console.log(arr1);
+          console.log(arr2);
+    const result = JSON.stringify(arr1) == JSON.stringify(arr2)
+
+    // if result is true
+    if(result) {
+        alert('Welcome to the Team');
+    }
+    else {
+        alert('You are not in our team');
+    }
      }
    //   console.log('---');
    //    console.log(row);
    //    console.log(ditem);
    //   console.log(comparsion(a,b));
    // console.log(ditem);
- 
+   
   return (<>
     {/* <h1>hhh</h1> */}
     
@@ -59,6 +81,7 @@ function Subdiv(props) {
             >{data}</div>
         // console.log(data+1)
      )}
+     <button onClick={()=>comparsion(orgStore,ditem)}>Finish</button>
   </>);
 }
 
