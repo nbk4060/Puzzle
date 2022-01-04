@@ -48,7 +48,7 @@ function Slate(props) {
     // console.log(arrayvalue);
   return (
   <>
-      <Subdiv row={shuffle1}/>   
+      <Subdiv row={shuffle1} org={result}/>   
   </>
   );
 }
