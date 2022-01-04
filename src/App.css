@@ -1,6 +1,6 @@
 .main {
   margin:auto;
-  width:50%;
+  width:80%;
  
   display: grid;
   grid-row-start: 1;
@@ -11,22 +11,28 @@
   grid-template-columns: auto auto auto auto;
   align-items: center;
   justify-content: center;
-  padding: 75px;
+  padding: 70px;
   background-color: #fff;
-  width: 50%;
+  width: 80%;
   margin:auto;
   border: #fff solid 3px;
 }
 
 .App > div{
   background-color: #61dafb;
-  border-radius: 5px;
+  border-radius: 7px;
   /* border: #747474 5px solid; */
   box-shadow: 5px 10px #747474;
-  
+  width:35px;
+  height: 35px;
   margin: 10px;
   padding:60px;
   font-size: 30px;
+  color: #2a2a2a;
+  text-shadow: 1px 1px #61dafb, 
+                2px 2px #747474, 
+                2px 2px #627680;
+                
 }
 .css-input {
   padding: 5px;
@@ -60,17 +66,10 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 button{
   margin: auto;
-  background-color: #747474; /* Green */
+  background-color: #747474; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -79,5 +78,7 @@ button{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
+  font-family:'fantasy';
+  
 }
