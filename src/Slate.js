@@ -7,18 +7,23 @@ function Slate(props) {
   const [shuffle1, setSuffle] = useState([]);
   const result = st1 * st2;// props values
 
-  const create = () => {
-    const newarray = [];
-    for (let i = 1; i <= result; i++) {
-      newarray.push(i);
-    }
-    shuffle(newarray);
-  }
+//  const width = 35/st1+'px';
+//  const height = 35/st1+'px';
+//  const padding = 60/st1+'px';
+  
+  // console.log('width');
+  // console.log(width);
 
   useEffect(() => {
-    if (result) {
-      create();
+    const create = () => {
+      const newarray = [];
+      for (let i = 1; i <= result; i++) {
+        newarray.push(i);
+      }
+      shuffle(newarray);
     }
+     create();
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
@@ -34,13 +39,10 @@ function Slate(props) {
     return array;
 
   }
-
-  // console.log(arrayvalue);
-  return (
+ return (
     <>
       <Subdiv row={shuffle1} org={result} />
     </>
   );
 }
-
 export default Slate
