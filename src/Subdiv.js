@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 function Subdiv(props) {
 
-   const { row, org } = props;
+   const { row, org} = props;
    const [ditem, setDitem] = useState(row);
    const [orgStore, setOrgStore] = useState([]);
    const content = [];
@@ -10,19 +10,19 @@ function Subdiv(props) {
    const dragOverItem = useRef();
 
    useEffect(() => {
-      if (row) {
+      const orginalArray = () => {
+         for (let i = 1; i <= org; i++) {
+            content.push(i);
+         }
+         setOrgStore(content);
+      }
          setDitem(row);
          orginalArray();
-      }
+      
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [row])
 
-   const orginalArray = () => {
-      for (let i = 1; i <= org; i++) {
-         content.push(i);
-      }
-      setOrgStore(content);
-   }
+ 
 
    const dragStart = (e, position) => {
       dragItem.current = position;
@@ -30,7 +30,6 @@ function Subdiv(props) {
 
    const dragEnter = (e, position) => {
       dragOverItem.current = position;
-      //   console.log(e.target.innerHTML);
    }
 
    const drop = (e) => {
@@ -46,13 +45,8 @@ function Subdiv(props) {
 
 
    const comparsion = (arr1, arr2) => {
-      //   console.log(a);
-      //   console.log(b);
-      // a.length === b.length && a.every((v,i)=> console.log(v===b[i]) );
-      // compare arrays
-
-      console.log(arr1);
-      console.log(arr2);
+      // console.log(arr1);
+      // console.log(arr2);
       const result = JSON.stringify(arr1) === JSON.stringify(arr2)
 
       // if result is true
@@ -63,24 +57,25 @@ function Subdiv(props) {
          alert('You are not in our team');
       }
    }
-   //   console.log('---');
-   //    console.log(row);
-   //    console.log(ditem);
-   //   console.log(comparsion(a,b));
-   // console.log(ditem);
+
+   // const dynamic_color = (a) => {
+   //      const color = '#fafbf'+ a ;
+   //      setDcolor(color);
+   //      return dcolor;
+   // }
+  
 
    return (<>
-      {/* <h1>hhh</h1> */}
-
       {ditem.map((data, index) =>
          <div key={index}
+           
             draggable
+            // style={{backgroundColor:`rgb(${data * 4}, ${data * 2}, ${data * 8},0.8)`}} // 
             onDragStart={(e) => dragStart(e, index)}
             onDragEnter={(e) => dragEnter(e, index)}
             onDragEnd={drop}
             onDragOver={(e) => e.preventDefault()}
          >{data}</div>
-         // console.log(data+1)
       )}
       <button onClick={() => comparsion(orgStore, ditem)}>Finish</button>
    </>);

@@ -9,7 +9,6 @@ function App() {
    const [count, setCount] = useState(null);
 
     const handlecount = (e) => {
-      // console.log(e.target.value);
             setCount(e.target.value)
     }
 

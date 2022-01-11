@@ -6,8 +6,7 @@ function Panel(props) {
     const {sno} = props;
 
     const style = {
-       gridTemplateColumns:`repeat(${sno},auto)`
-        
+       gridTemplateColumns:`repeat(${sno},90px)` 
       };
 
   return (

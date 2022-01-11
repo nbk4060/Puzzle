@@ -4,16 +4,17 @@
  
   display: grid;
   grid-row-start: 1;
+  
 }
 .App {
   text-align: center;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+ 
   align-items: center;
   justify-content: center;
   padding: 70px;
   background-color: #fff;
-  width: 80%;
+  width: auto;
   margin:auto;
   border: #fff solid 3px;
 }
@@ -26,13 +27,14 @@
   width:35px;
   height: 35px;
   margin: 10px;
-  padding:60px;
-  font-size: 30px;
+  padding:15px;
+  font-size: 27px;
   color: #2a2a2a;
-  text-shadow: 1px 1px #61dafb, 
+  /* text-shadow: 1px 1px #61dafb, 
                 2px 2px #747474, 
-                2px 2px #627680;
-                
+                2px 2px #627680; */
+  cursor: pointer;              
+  transition-duration: 0.4s;             
 }
 .css-input {
   padding: 5px;
@@ -68,11 +70,14 @@
 
 
 button{
+  transition-duration: 0.4s;
   margin: auto;
   background-color: #747474; 
   border: none;
-  color: white;
-  padding: 15px 32px;
+  border-radius: 5px;
+  box-shadow: 6px 0px 2px #0c5264;
+  color: rgb(220, 231, 233);
+  padding: 7px 16px;
   margin-top: 25px;
   margin-right: 50px;
   text-align: center;
@@ -80,5 +85,12 @@ button{
   display: inline-block;
   font-size: 20px;
   font-family:'fantasy';
+
   
+}
+button:hover
+{
+  opacity: 0.8;
+  cursor: pointer;
+  color: #022029b0;
 }
